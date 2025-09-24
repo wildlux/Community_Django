@@ -30,3 +30,9 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+class LoginToken(models.Model):
+    token = models.CharField(max_length=100, unique=True)
+    telegram_id = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()

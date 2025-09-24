@@ -139,6 +139,8 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+SESSION_COOKIE_AGE = 4 * 3600  # 4 hours
+
 # Telegram allauth
 SOCIALACCOUNT_PROVIDERS = {
     'telegram': {

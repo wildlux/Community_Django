@@ -1,0 +1,22 @@
+Domanda che forse gli utenti potrebbero fare. 
+
+La comunità Python Italia ha mai rilasciato video di spiegazioni su questo processo? 
+
+Se si sarebbe interessante farlo creare un contest a più persone in più si dà la possibilità di poter pensare ad un idea per l'aiuto nella traduzione stessa. 
+
+Mi spiego meglio: immaginati che nella homepage del canale YouTube di Python Italia si chiedesse un software o un paper 📜 o una proposta per aiutare la traduzione in modo facile ( usano i social media ad esempio come login) 
+
+Ed utilizzarlo una sorta di discord ma per Python. 
+
+In altre parole si esiste la comunità esistono pubblicazioni ma non esiste un software per cui fai 
+1) login 
+2) cambi una stringa frase 
+3) gli altri commentano tipo flashcard. 
+
+Se sì potesse fare anche un'applicazione via Android o iOS sarebbe il massimo.
+
+Io penso che con la competenza che la comunità Python ha ed l'ha fatta notare non avrà difficoltà a crearne una. 
+
+Questo stesso procedimento si può fare per tutti i vari progetti correlati (Django,flask etc..)
+
+Che ne pensi?

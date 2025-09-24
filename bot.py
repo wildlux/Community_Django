@@ -14,10 +14,15 @@ TOKEN = '8210640700:AAEHDeluJEJhL2FGaiy-8FGIGbFnXV3zmDw'
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     telegram_id = str(update.effective_user.id)
-    token = str(uuid.uuid4())
-    expires_at = datetime.now() + timedelta(hours=4)
-    LoginToken.objects.create(token=token, telegram_id=telegram_id, expires_at=expires_at)
-    await update.message.reply_text(f'Stringa di accesso: {token}\nValida per 4 ore. Incollala sul sito per accedere.')
+    now = datetime.now()
+    active_token = LoginToken.objects.filter(telegram_id=telegram_id, expires_at__gt=now).first()
+    if active_token:
+        await update.message.reply_text(f'Hai già un token attivo: {active_token.token}\nValido fino a {active_token.expires_at}. Incollalo sul sito per accedere.')
+    else:
+        token = str(uuid.uuid4())
+        expires_at = now + timedelta(hours=4)
+        LoginToken.objects.create(token=token, telegram_id=telegram_id, expires_at=expires_at)
+        await update.message.reply_text(f'Stringa di accesso: {token}\nValida per 4 ore. Incollala sul sito per accedere.')
 
 app = ApplicationBuilder().token(TOKEN).build()
 

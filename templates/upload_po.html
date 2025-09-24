@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Carica Traduzioni</title>
+</head>
+<body>
+    <h1>Carica file .po per traduzioni</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Carica</button>
+    </form>
+    <a href="{% url 'home' %}">Torna alla home</a>
+</body>
+</html>

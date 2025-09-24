@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Traduzioni Django Italia</title>
+    <link rel="stylesheet" href="https://static.djangoproject.com/css/output.3e9df608c798.css">
+</head>
+<body id="homepage" class="homepage">
+<header id="top">
+  <div class="container container--flex--wrap--mobile">
+    <a class="logo" href="/">Django Italia Traduzioni</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+  </div>
+</header>
+
+<section class="copy-banner">
+  <div class="container">
+    <h1>Benvenuto nel progetto di traduzioni Django Italia</h1>
+    <p><em>Django: The web framework for perfectionists with deadlines.</em></p>
+    {% if user.is_authenticated %}
+        <p>Ciao, {{ user.username }}!</p>
+        <a href="{% url 'account_logout' %}" class="cta">Logout</a>
+        <a href="{% url 'upload_po' %}" class="cta outline">Carica traduzioni .po</a>
+    {% else %}
+        <a href="{% url 'account_login' %}" class="cta">Login con Telegram</a>
+    {% endif %}
+  </div>
+</section>
+
+<div class="container">
+  <div class="section">
+    <h2>Traduzione via browser web</h2>
+    <p>Traduci la documentazione Django direttamente dal tuo browser web. Carica file .po e contribuisci alla traduzione italiana.</p>
+    <a href="{% url 'upload_po' %}" class="cta">Inizia traduzione web</a>
+  </div>
+
+  <div class="section">
+    <h2>Traduzione via web mobile</h2>
+    <p>Accedi e traduci utilizzando dispositivi mobili. Ottimizzato per smartphone e tablet.</p>
+    <a href="{% url 'upload_po' %}" class="cta">Inizia traduzione mobile</a>
+  </div>
+</div>
+</body>
+</html>

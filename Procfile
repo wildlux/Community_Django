@@ -1,0 +1,1 @@
+web: gunicorn django_translations.wsgi --log-file -

@@ -17,8 +17,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     token = str(uuid.uuid4())
     expires_at = datetime.now() + timedelta(hours=4)
     LoginToken.objects.create(token=token, telegram_id=telegram_id, expires_at=expires_at)
-    link = f'http://localhost:8000/login/{token}'
-    await update.message.reply_text(f'Clicca qui per accedere: {link}\nIl link scade tra 4 ore.')
+    await update.message.reply_text(f'Stringa di accesso: {token}\nValida per 4 ore. Incollala sul sito per accedere.')
 
 app = ApplicationBuilder().token(TOKEN).build()
 

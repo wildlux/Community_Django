@@ -22,7 +22,12 @@
         <a href="{% url 'account_logout' %}" class="cta">Logout</a>
         <a href="{% url 'upload_po' %}" class="cta outline">Carica traduzioni .po</a>
     {% else %}
-        <p>Accedi tramite il bot Telegram @DJangoITALIAPythonbot</p>
+        <p>Accedi tramite il bot Telegram: <a href="tg://resolve?domain=DJangoITALIAPythonbot&start=login" class="cta">Apri Telegram</a></p>
+        <form method="post" action="{% url 'telegram_login_post' %}">
+            {% csrf_token %}
+            <input type="text" name="token" placeholder="Incolla il token dal bot" required>
+            <button type="submit" class="cta">Accedi</button>
+        </form>
     {% endif %}
   </div>
 </section>

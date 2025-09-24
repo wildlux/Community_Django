@@ -47,3 +47,10 @@ def telegram_login(request, token):
     except LoginToken.DoesNotExist:
         pass
     return render(request, 'login_failed.html')
+
+def telegram_login_post(request):
+    if request.method == 'POST':
+        token = request.POST.get('token')
+        if token:
+            return redirect('telegram_login', token=token)
+    return render(request, 'login_failed.html')

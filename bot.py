@@ -4,13 +4,16 @@ from datetime import datetime, timedelta
 import uuid
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from dotenv import load_dotenv
+
+load_dotenv()
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_translations.settings')
 django.setup()
 
 from translations.models import LoginToken
 
-TOKEN = '8210640700:AAEHDeluJEJhL2FGaiy-8FGIGbFnXV3zmDw'
+TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     telegram_id = str(update.effective_user.id)

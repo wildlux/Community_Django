@@ -3,3 +3,4 @@ python-telegram-bot
 polib
 gunicorn
 psycopg2-binary
+python-dotenv
